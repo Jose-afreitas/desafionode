@@ -1,12 +1,9 @@
 name: Node.js CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
-      - main
+      - develop
 
 jobs:
   build:
@@ -15,11 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v4
-      - name: Instalar dependências
+        with:
+          node-version: 14
+      - name: Setup node
         run: npm install
         
-
-      - name: Setup node
+      - name: test node
         run: npm test
 
 
