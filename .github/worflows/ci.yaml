@@ -1,22 +1,50 @@
-name: ci-node-workflow
-#on: [push]
+name: Node.js CI
+
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 14 ]
-    name: Node ${{ matrix.node }} sample
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v4
+      - name: Instalar dependências
+        run: npm install
+        
+
       - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm ci
-      - run: npm test
+        run: npm test
+
+
+
+# name: ci-node-workflow
+# #on: [push]
+# on:
+#   pull_request:
+#     branches:
+#       - develop
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node: [ 14 ]
+#     name: Node ${{ matrix.node }} sample
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Setup node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ matrix.node }}
+#       - run: npm ci
+#       - run: npm test
+      
+
