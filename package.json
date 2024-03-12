@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "",
+    "test": "jest --coverage",
     "start": "nodemon server.js"
   },
   "author": "Jose Augusto",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "sonar-scanner": "^3.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0",

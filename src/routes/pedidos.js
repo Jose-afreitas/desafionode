@@ -8,13 +8,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    res.status(2001).send({
+    res.status(200).send({
         message: 'Post pedidos'
     })
 });
 
 router.get('/:id_pedido', (req, res, next) => {
-    const id = req.params.id_produto
+    const id = req.params.id_pedido
 
     if (id === 'especial') {
         res.status(200).send({
@@ -32,13 +32,13 @@ router.get('/:id_pedido', (req, res, next) => {
 });
 
 router.patch('/', (req, res, next) => {
-    res.status(2001).send({
+    res.status(200).send({
         message: 'Patch pedidos'
     })
 });
 
 router.delete('/', (req, res, next) => {
-    res.status(2001).send({
+    res.status(200).send({
         message: 'Delete pedidos'
     })
 });

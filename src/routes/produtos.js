@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    res.status(2001).send({
+    res.status(200).send({
         message: 'Post produtos'
     })
 });
@@ -32,14 +32,14 @@ router.get('/:id_produto', (req, res, next) => {
 });
 
 router.patch('/', (req, res, next) => {
-    res.status(2001).send({
+    res.status(200).send({
         message: 'Patch produtos'
     })
 });
 
 
 router.delete('/', (req, res, next) => {
-    res.status(2001).send({
+    res.status(200).send({
         message: 'Delete produtos'
     })
 });
